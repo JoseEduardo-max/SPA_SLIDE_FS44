@@ -1,0 +1,30 @@
+body {
+    font-family: 'Tahoma', sans-serif;
+    background: #f0f8ff;
+    color: #003366;
+    margin: 20px;
+  }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0066cc;
+    color: #fff;
+    padding: 20px 0;
+    z-index: 1000;
+}
+  
+  h1 {
+    color: #fff;
+  }
+  
+  a {
+    color: #003366;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
