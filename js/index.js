@@ -1,8 +1,7 @@
 const rotas = {
-    introducao: "introducao.html",
-    instala: "instala.html",
-    porque: "porque.html",
-    sabermais: "sabermais.html",
+    introducao: "i18next.html",
+    instala: "quilljs.html",
+    porque: "select2.html",
   };
   
   async function carregarPagina() {
@@ -21,8 +20,8 @@ const rotas = {
     } else {
       conteudo.innerHTML = `
         <section>
-          <h2>Bem-vindo ao Guia i18next!</h2>
-          <p>Use o menu acima para navegar pelas seções.</p>
+          <h2>Bem-vindo ao Slide de Apresentação!</h2>
+          <p>Use o menu acima para navegar pelas Bibliotecas.</p>
         </section>
       `;
     }
