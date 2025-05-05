@@ -8,6 +8,14 @@ body, html {
   line-height: 1.6;
   background-color: #f4f4f9;
   color: #333;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 header {
@@ -55,14 +63,22 @@ nav ul li a:hover {
   padding-bottom: 80px;
 }
 
-.what{
+.i18next-page > section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.what {
   font-size: 28px;
   color: #2c3e50;
   margin-bottom: 20px;
-  margin-top: 140px;
+  margin-top: 40px;
 }
 
-.why{
+.why {
   margin-top: 15px;
 }
 
@@ -96,14 +112,24 @@ ul li a:hover {
 }
 
 .images img {
-  width: 20%;
+  flex: 1 1 200px;
+  max-width: 200px;
+  width: 100%;
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 .images img:hover {
   transform: scale(1.05);
+}
+
+pre, code {
+  background-color: #ecf0f1;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: auto;
 }
 
 .modal {
@@ -119,7 +145,7 @@ ul li a:hover {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
+  display: flex;
 }
 
 .modal-content {
@@ -127,17 +153,4 @@ ul li a:hover {
   max-height: 80%;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-
-footer {
-  background-color: #2c3e50;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  left: 0;
-  z-index: 1000;
 }
