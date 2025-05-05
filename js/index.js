@@ -46,3 +46,14 @@ async function carregarPagina() {
 
 window.addEventListener("hashchange", carregarPagina);
 window.addEventListener("DOMContentLoaded", carregarPagina);
+
+window.openModal = function(img) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+  modal.style.display = 'flex';
+  modalImg.src = img.src;
+};
+
+window.closeModal = function() {
+  document.getElementById('imageModal').style.display = 'none';
+};
