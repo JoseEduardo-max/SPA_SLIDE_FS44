@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O que é i18next?</title>
     <link rel="stylesheet" href="css/i18next.css" />
 </head>
+
 <body class="i18next-page">
     <header>
         <h1>Guia: i18next</h1>
@@ -34,12 +36,14 @@
                 <li>Detecta automaticamente o idioma do usuário</li>
             </ul>
         </div>
-        
+
+        <hr>
+
         <div>
             <h2 class="install">Como instalar e aplicar</h2>
             <p>Instale com o comando:</p>
             <code>npm install i18next</code>
-        
+
             <p>Exemplo básico:</p>
             <pre><code>import i18next from 'i18next';
 
@@ -49,14 +53,20 @@ i18next.init({
   },
   lng: "en"
 });</code></pre>
-        
+
             <div class="images">
-                <p>📸 Exemplos visuais:</p>
-                <img src="https://i.imgur.com/FDR8YkF.png" alt="Instalação">
-                <img src="https://i.imgur.com/1Q9Z1Zf.png" alt="Uso no React">
+                <p>📸 Exemplos visuais:</p> <br>
+                <img src="imagens/Captura de tela 2025-05-04 210928.png" alt="" onclick="openModal(this)">
+                <img src="imagens/Captura de tela 2025-05-04 205914.png" alt="" onclick="openModal(this)">
             </div>
         </div>
-        
+
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <img id="modalImg" class="modal-content">
+        </div>
+
+        <hr>
+
         <div>
             <h2 class="why">Por que usar i18next?</h2>
             <ul>
@@ -66,7 +76,9 @@ i18next.init({
                 <li>Biblioteca escalável e com comunidade ativa</li>
             </ul>
         </div>
-        
+
+        <hr>
+
         <div class="know">
             <h2>Saiba mais</h2>
             <ul>
@@ -80,5 +92,20 @@ i18next.init({
     <footer>
         <p>Feito por Jose Eduardo - SPA_SLIDE_FS44</p>
     </footer>
+
+    <script src="js/index.js"></script>
+    <script>
+        function openModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
 </body>
+
 </html>
