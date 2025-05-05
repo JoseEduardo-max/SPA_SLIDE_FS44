@@ -2,6 +2,7 @@ const rotas = {
   i18next: "i18next.html",
   quilljs: "quilljs.html",
   select2: "select2.html",
+  filterizr: "filterizr.html",
 };
 
 async function carregarPagina() {
