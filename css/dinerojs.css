@@ -5,14 +5,6 @@
             color: #333;
         }
 
-        /* .titulo{
-          background-color: black;
-          padding: 3rem 3rem;
-          display: flex;
-          justify-content: center;
-
-        } */
-
         .o-que-e{
           margin-top: 150px;
         }
@@ -56,3 +48,27 @@
             border-radius: 5px;
             overflow-x: auto;
         }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; 
+            padding: 0;
+            margin: 0;
+          }
+          
+          nav a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            margin: 0; 
+            white-space: nowrap; 
+            transition: color 0.3s ease, background-color 0.3s ease;
+          }
+          
+          nav a:hover {
+            color: #3e89d4; /* Cor do texto ao passar o mouse */
+            background-color: white; /* Cor de fundo ao passar o mouse */
+            border-radius: 5px;
+          }

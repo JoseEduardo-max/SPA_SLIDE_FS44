@@ -3,6 +3,7 @@ const rotas = {
   quilljs: "quilljs.html",
   select2: "select2.html",
   filterizr: "filterizr.html",
+  dinerojs: "dinerojs.html",
 };
 
 async function carregarPagina() {
