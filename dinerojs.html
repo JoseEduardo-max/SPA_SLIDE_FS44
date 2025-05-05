@@ -1,0 +1,58 @@
+DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinero.js</title>
+    <link rel="stylesheet" href="css/dinerojs.css">
+</head>
+<body>
+
+  <header>
+    <div class="titulo">
+      <h1>Dinero.js</h1>
+    </div>
+        <nav class="navbar">
+          <a href="i18next.html">I18N</a>
+          <a href="quilljs.html">Quill</a>
+          <a href="select2.html">Select2</a>
+          <a class="filterizr" href="filterizr.html">Filterizr</a>
+          <a href="dinerojs.html">DineroJS</a>
+        </nav>  
+  </header>
+
+    <div class="o-que-e">
+      <h2>O que é?</h2>
+      <p>Dinero.js é uma biblioteca JavaScript projetada para lidar com valores monetários de forma precisa e consistente. Ela foi criada para resolver problemas comuns ao trabalhar com valores financeiros em JavaScript, especialmente aqueles relacionados à imprecisão no tratamento de números decimais.
+        A principal vantagem do Dinero.js é garantir precisão e conformidade com os padrões financeiros ao lidar com valores monetários. 
+        Isso é importante porque os números decimais podem gerar erros de arredondamento quando usados em cálculos, 
+        o que é problemático em transações financeiras, onde a precisão é crucial.</p>
+    </div>
+    
+    <h2>Como Utilizar</h2>
+    <p>Na aplicação ClubedoVinho-Front podemos utilizar essa biblioteca para formatar 
+      automaticamente os preços dos produtos que foram adicionados:</p>
+
+    <pre><code>
+function formatarPreco(valor) {
+    let numero = parseFloat(valor);
+
+    if (isNaN(numero)) {
+        return 'R$ 0,00';
+    }
+
+    const preco = Dinero({ amount: Math.round(numero * 100), currency: 'BRL' });
+    return preco.toFormat('$0,0.00').replace('$', '$ ');
+}
+    </code></pre>
+
+    <p>O código acima é uma função chamada <b>formatarPreco</b>, que tem como objetivo formatar um valor monetário (passado como parâmetro) para o formato de real brasileiro (R$). A função utiliza a biblioteca Dinero.js para realizar a formatação de maneira precisa e simples. Aqui está o que o código faz:</p>
+    <ul>
+        <li>Converte o valor de entrada para um número decimal.</li>
+        <li>Verifica se o valor é válido; caso contrário, retorna "R$ 0,00".</li>
+        <li>Cria um objeto Dinero usando o valor fornecido e a moeda brasileira (BRL), multiplicando o valor por 100 para trabalhar com centavos.</li>
+        <li>Utiliza o método <b>toFormat</b> do Dinero.js para formatar o número com duas casas decimais e o símbolo "$", que é substituído por "R$".</li>
+        <li>Retorna o valor formatado no padrão monetário.</li>
+    </ul>
+</body>
+</html>
