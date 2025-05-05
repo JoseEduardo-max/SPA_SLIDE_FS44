@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O que é i18next?</title>
+    <title>i18next</title>
     <link rel="stylesheet" href="css/i18next.css" />
 </head>
 
@@ -13,18 +13,17 @@
         <h1>Guia: i18next</h1>
         <nav>
             <ul>
-                <nav>
-                    <a href="#i18next">I18N</a>
-                    <a href="#quilljs">Quill</a>
-                    <a href="#select2">Select2</a>
-                    <a href="filterizr.html">Filterizr</a>
-                </nav>
+                <li><a href="#i18next">I18N</a></li>
+                <li><a href="#quilljs">Quill</a></li>
+                <li><a href="#select2">Select2</a></li>
+                <li><a href="filterizr.html">Filterizr</a></li>
             </ul>
         </nav>
     </header>
 
-    <div>
-        <div>
+    <main class="i18next-page">
+        <section>
+            <img src="imagens/i18n.png" alt="Logo do i18next">
             <h2 class="what">O que é i18next?</h2>
             <p>
                 i18next é uma biblioteca JavaScript para <strong>internacionalização</strong>. Ela facilita a tradução
@@ -35,11 +34,11 @@
                 <li>Usa arquivos JSON como base de tradução</li>
                 <li>Detecta automaticamente o idioma do usuário</li>
             </ul>
-        </div>
+        </section>
 
         <hr>
 
-        <div>
+        <section>
             <h2 class="install">Como instalar e aplicar</h2>
             <p>Instale com o comando:</p>
             <code>npm install i18next</code>
@@ -55,11 +54,11 @@ i18next.init({
 });</code></pre>
 
             <div class="images">
-                <p>📸 Exemplos visuais:</p> <br>
-                <img src="imagens/Captura de tela 2025-05-04 210928.png" alt="" onclick="openModal(this)">
-                <img src="imagens/Captura de tela 2025-05-04 205914.png" alt="" onclick="openModal(this)">
+                <p>📸 Exemplos visuais:</p><br>
+                <img src="imagens/Captura de tela 2025-05-04 210928.png" alt="Exemplo i18next" onclick="openModal(this)">
+                <img src="imagens/Captura de tela 2025-05-04 205914.png" alt="Configuração i18next" onclick="openModal(this)">
             </div>
-        </div>
+        </section>
 
         <div id="imageModal" class="modal" onclick="closeModal()">
             <img id="modalImg" class="modal-content">
@@ -67,7 +66,7 @@ i18next.init({
 
         <hr>
 
-        <div>
+        <section>
             <h2 class="why">Por que usar i18next?</h2>
             <ul>
                 <li>Facilita apps multilíngues</li>
@@ -75,19 +74,19 @@ i18next.init({
                 <li>Suporte a fallback e pluralização</li>
                 <li>Biblioteca escalável e com comunidade ativa</li>
             </ul>
-        </div>
+        </section>
 
         <hr>
 
-        <div class="know">
+        <section class="know">
             <h2>Saiba mais</h2>
             <ul>
                 <li><a href="https://www.i18next.com" target="_blank">🌐 Site oficial</a></li>
                 <li><a href="https://github.com/i18next/i18next" target="_blank">📦 Repositório GitHub</a></li>
                 <li><a href="https://react.i18next.com" target="_blank">⚛️ Docs para React</a></li>
             </ul>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <script src="js/index.js"></script>
 </body>
