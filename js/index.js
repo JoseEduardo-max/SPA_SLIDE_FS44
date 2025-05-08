@@ -2,7 +2,9 @@ const rotas = {
   i18next: "i18next.html",
   quilljs: "quilljs.html",
   select2: "select2.html",
-};
+  filterizr: "filterizr.html",
+  dinerojs: "dinerojs.html",
+}
 
 async function carregarPagina() {
   const hash = location.hash.replace("#", "");
@@ -45,3 +47,14 @@ async function carregarPagina() {
 
 window.addEventListener("hashchange", carregarPagina);
 window.addEventListener("DOMContentLoaded", carregarPagina);
+
+window.openModal = function(img) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+  modal.style.display = 'flex';
+  modalImg.src = img.src;
+};
+
+window.closeModal = function() {
+  document.getElementById('imageModal').style.display = 'none';
+};

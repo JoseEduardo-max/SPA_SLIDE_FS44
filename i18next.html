@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O que é i18next?</title>
-    <link rel="stylesheet" href="css/i18next.css" />
-</head>
-<body class="i18next-page">
-    <header>
-        <h1>Guia: i18next</h1>
-        <nav>
-            <ul>
-                <nav>
-                    <a href="#i18next">I18N</a>
-                    <a href="#quilljs">Quill</a>
-                    <a href="#select2">Select2</a>
-                    <a href="filterizr.html">Filterizr</a>
-                </nav>
-            </ul>
-        </nav>
-    </header>
 
-    <div>
-        <div>
-            <h2 class="what">O que é i18next?</h2>
-            <p>
-                i18next é uma biblioteca JavaScript para <strong>internacionalização</strong>. Ela facilita a tradução
-                de textos, pluralização, formatação de datas, entre outras funcionalidades.
-            </p>
-            <ul>
-                <li>Funciona em navegadores, Node.js, React, Vue, Angular etc.</li>
-                <li>Usa arquivos JSON como base de tradução</li>
-                <li>Detecta automaticamente o idioma do usuário</li>
-            </ul>
-        </div>
-        
-        <div>
-            <h2 class="install">Como instalar e aplicar</h2>
-            <p>Instale com o comando:</p>
-            <code>npm install i18next</code>
-        
-            <p>Exemplo básico:</p>
-            <pre><code>import i18next from 'i18next';
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>i18next</title>
+  <link rel="stylesheet" href="css/i18next.css" />
+</head>
+
+<body class="i18next-page">
+  <header>
+    <h1>Guia: i18next</h1>
+    <nav>
+      <ul>
+        <li><a href="#i18next">I18N</a></li>
+        <li><a href="#quilljs">Quill</a></li>
+        <li><a href="#select2">Select2</a></li>
+        <li><a href="dinerojs.html">DineroJS</a></li>
+        <li><a href="filterizr.html">Filterizr</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="i18next-page">
+    <section>
+      <img src="imagens/i18n.png" alt="Logo do i18next" />
+      <h2 class="what">O que é i18next?</h2>
+      <p>
+        i18next é uma biblioteca JavaScript para <strong>internacionalização</strong>. Ela facilita a tradução
+        de textos, pluralização, formatação de datas, entre outras funcionalidades.
+      </p>
+      <ul>
+        <li>Funciona em navegadores, Node.js, React, Vue, Angular etc.</li>
+        <li>Usa arquivos JSON como base de tradução</li>
+        <li>Detecta automaticamente o idioma do usuário</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2 class="install">Como instalar e aplicar</h2>
+      <p>Instale com o comando:</p>
+      <code>npm install i18next</code>
+
+      <p>Exemplo básico:</p>
+      <pre><code>import i18next from 'i18next';
 
 i18next.init({
   resources: {
@@ -49,36 +53,55 @@ i18next.init({
   },
   lng: "en"
 });</code></pre>
-        
-            <div class="images">
-                <p>📸 Exemplos visuais:</p>
-                <img src="https://i.imgur.com/FDR8YkF.png" alt="Instalação">
-                <img src="https://i.imgur.com/1Q9Z1Zf.png" alt="Uso no React">
-            </div>
-        </div>
-        
-        <div>
-            <h2 class="why">Por que usar i18next?</h2>
-            <ul>
-                <li>Facilita apps multilíngues</li>
-                <li>Integração simples com frameworks</li>
-                <li>Suporte a fallback e pluralização</li>
-                <li>Biblioteca escalável e com comunidade ativa</li>
-            </ul>
-        </div>
-        
-        <div class="know">
-            <h2>Saiba mais</h2>
-            <ul>
-                <li><a href="https://www.i18next.com" target="_blank">🌐 Site oficial</a></li>
-                <li><a href="https://github.com/i18next/i18next" target="_blank">📦 Repositório GitHub</a></li>
-                <li><a href="https://react.i18next.com" target="_blank">⚛️ Docs para React</a></li>
-            </ul>
-        </div>
+
+      <div class="images">
+        <p>📸 Exemplos visuais:</p><br />
+        <img src="imagens/Captura de tela 2025-05-04 210928.png" alt="Exemplo i18next" onclick="openModal(this)" />
+        <img src="imagens/Captura de tela 2025-05-04 205914.png" alt="Configuração i18next" onclick="openModal(this)" />
+      </div>
+    </section>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImg" class="modal-content">
     </div>
 
-    <footer>
-        <p>Feito por Jose Eduardo - SPA_SLIDE_FS44</p>
-    </footer>
+    <hr />
+
+    <section>
+      <h2 class="why">Por que usar i18next?</h2>
+      <ul>
+        <li>Facilita apps multilíngues</li>
+        <li>Integração simples com frameworks</li>
+        <li>Suporte a fallback e pluralização</li>
+        <li>Biblioteca escalável e com comunidade ativa</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2 class="why">Contras do i18next</h2>
+      <ul>
+        <li>Configuração pode ser complexa em projetos grandes com múltiplos idiomas e namespaces</li>
+        <li>Pode aumentar o tamanho do bundle com plugins adicionais</li>
+        <li>Traduções dinâmicas exigem tratamento assíncrono e cuidado no carregamento</li>
+        <li>Erros de tradução podem ser difíceis de rastrear com fallback e namespaces</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section class="know">
+      <h2>Saiba mais</h2>
+      <ul>
+        <li><a href="https://www.i18next.com" target="_blank">🌐 Site oficial</a></li>
+        <li><a href="https://github.com/i18next/i18next" target="_blank">📦 Repositório GitHub</a></li>
+        <li><a href="https://react.i18next.com" target="_blank">⚛️ Docs para React</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/index.js"></script>
 </body>
+
 </html>
