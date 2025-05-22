@@ -14,7 +14,6 @@
     <nav>
       <ul>
         <li><a href="#i18next">I18N</a></li>
-        <li><a href="#quilljs">Quill</a></li>
         <li><a href="#select2">Select2</a></li>
         <li><a href="dinerojs.html">DineroJS</a></li>
         <li><a href="filterizr.html">Filterizr</a></li>
@@ -25,23 +24,26 @@
   <main class="i18next-page">
     <section>
       <img src="imagens/i18n.png" alt="Logo do i18next" />
-      <h2 class="what">O que é i18next?</h2>
+      <h2 class="what">O que o i18next resolve?</h2>
       <p>
-        i18next é uma biblioteca JavaScript para <strong>internacionalização</strong>. Ela facilita a tradução
-        de textos, pluralização, formatação de datas, entre outras funcionalidades.
+        A biblioteca <strong>i18next</strong> resolve o problema de <strong>internacionalização</strong> em aplicações.
+        Isso significa traduzir textos da interface para diferentes idiomas sem precisar duplicar arquivos ou escrever códigos separados para cada língua.
       </p>
       <ul>
-        <li>Funciona em navegadores, Node.js, React, Vue, Angular etc.</li>
-        <li>Usa arquivos JSON como base de tradução</li>
-        <li>Detecta automaticamente o idioma do usuário</li>
+        <li>Evita retrabalho na tradução manual</li>
+        <li>Centraliza todas as traduções em arquivos JSON</li>
+        <li>Oferece suporte à pluralização, interpolação e fallback automático</li>
       </ul>
     </section>
 
     <hr />
 
     <section>
-      <h2 class="install">Como instalar e aplicar</h2>
-      <p>Instale com o comando:</p>
+      <h2 class="install">Como o i18next funciona?</h2>
+      <p>
+        Ele carrega os textos traduzidos de arquivos `.json`, identifica automaticamente o idioma do usuário e substitui os textos da interface conforme configurado.
+      </p>
+      <p>Instalação:</p>
       <code>npm install i18next</code>
 
       <p>Exemplo básico:</p>
@@ -49,13 +51,15 @@
 
 i18next.init({
   resources: {
-    en: { translation: { "key": "Hello World" } }
+    en: { translation: { "key": "Hello World" } },
+    pt: { translation: { "key": "Olá Mundo" } }
   },
-  lng: "en"
+  lng: "pt", // idioma padrão
+  fallbackLng: "en"
 });</code></pre>
 
       <div class="images">
-        <p>📸 Exemplos visuais:</p><br />
+        <p>📸 Exemplo visual de uso no projeto Clube do Vinho:</p><br />
         <img src="imagens/Captura de tela 2025-05-04 210928.png" alt="Exemplo i18next" onclick="openModal(this)" />
         <img src="imagens/Captura de tela 2025-05-04 205914.png" alt="Configuração i18next" onclick="openModal(this)" />
       </div>
@@ -68,36 +72,58 @@ i18next.init({
     <hr />
 
     <section>
-      <h2 class="why">Por que usar i18next?</h2>
+      <h2 class="why">Por que usamos i18next no Clube do Vinho?</h2>
+      <p>
+        Nosso projeto visa alcançar usuários de diferentes regiões. Para oferecer uma <strong>experiência personalizada e acessível</strong>, foi necessário permitir que o site mudasse automaticamente entre os idiomas <strong>Português e Inglês</strong>.
+      </p>
       <ul>
-        <li>Facilita apps multilíngues</li>
-        <li>Integração simples com frameworks</li>
-        <li>Suporte a fallback e pluralização</li>
-        <li>Biblioteca escalável e com comunidade ativa</li>
+        <li>Melhora a usabilidade para turistas e usuários internacionais</li>
+        <li>Facilita escalar o sistema para outros países</li>
+        <li>Ajuda a tornar o projeto mais profissional</li>
       </ul>
     </section>
 
     <hr />
 
     <section>
-      <h2 class="why">Contras do i18next</h2>
+      <h2 class="why">Consequências da implementação</h2>
+      <h3>✅ Positivas:</h3>
       <ul>
-        <li>Configuração pode ser complexa em projetos grandes com múltiplos idiomas e namespaces</li>
-        <li>Pode aumentar o tamanho do bundle com plugins adicionais</li>
-        <li>Traduções dinâmicas exigem tratamento assíncrono e cuidado no carregamento</li>
-        <li>Erros de tradução podem ser difíceis de rastrear com fallback e namespaces</li>
+        <li>Tradução centralizada e reaproveitável</li>
+        <li>Melhor experiência do usuário em diferentes idiomas</li>
+        <li>Facilidade de manutenção de textos</li>
+      </ul>
+
+      <h3>⚠️ Negativas:</h3>
+      <ul>
+        <li>Curva de aprendizado inicial pode ser alta</li>
+        <li>Necessário atenção para não esquecer textos fora do JSON</li>
+        <li>Projetos grandes podem exigir divisão em namespaces</li>
       </ul>
     </section>
 
     <hr />
 
     <section class="know">
-      <h2>Saiba mais</h2>
-      <ul>
-        <li><a href="https://www.i18next.com" target="_blank">⚛️ Docs para React</a></li>
-        <li><a href="https://github.com/i18next/i18next" target="_blank">📦 Repositório GitHub</a></li>
-        <li><a href="https://joseeduardo-max.github.io/clubedovinho-front/pages/config.html" target="_blank">Aplicação do Código</a></li>
-      </ul>
+      <h2>Veja na prática no Clube do Vinho</h2>
+      <p>Após implementação, o site detecta o idioma do navegador e ajusta os textos dinamicamente:</p>
+      <pre><code>// Exemplo real de uso no projeto
+import i18next from "i18next";
+import Backend from "i18next-http-backend";
+import LanguageDetector from "i18next-browser-languagedetector";
+
+i18next
+  .use(Backend)
+  .use(LanguageDetector)
+  .init({
+    fallbackLng: "pt",
+    debug: true,
+    interpolation: {
+      escapeValue: false
+    }
+  });</code></pre>
+
+      <p>🌐 Veja funcionando em: <a href="https://joseeduardo-max.github.io/clubedovinho-front/pages/config.html" target="_blank">clubedovinho/config.html</a></p>
     </section>
   </main>
 
